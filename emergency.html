@@ -1,519 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Services - MediCare Plus Hospital</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234A90E2' width='100' height='100'/><text x='50' y='60' font-size='60' fill='white' text-anchor='middle' dy='.3em'>+</text></svg>">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&family=Zen+Dots&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="scroll-progress"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Emergency — MediCare Plus</title>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-hospital-user brand-icon"></i>
-                MediCare Plus
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Albert+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="https://img.icons8.com/ios-filled/40/ffffff/hospital.png"
+            alt="logo"
+            style="width: 34px; margin-right: 8px"
+          />
+          <span class="fw-bold"
+            >MediCare<span class="text-muted-2">+</span></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-4 me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="doctors.html" class="nav-link">Doctors</a>
+            </li>
+            <li class="nav-item">
+              <a href="emergency.html" class="nav-link text-danger"
+                >Emergency</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="developer.html" class="nav-link">Developer</a>
+            </li>
+          </ul>
+
+          <div id="authArea" class="d-flex align-items-center gap-2"></div>
+          <div class="ms-3 d-flex align-items-center">
+            <button
+              id="themeToggleBtn"
+              class="btn btn-sm btn-outline-light ms-2"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-sun"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="emergency.html">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="developer.html">Developer</a>
-                    </li>
-                </ul>
-                <div class="navbar-icons">
-                    <button class="theme-toggle" title="Toggle Theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <div id="authButtons" class="d-flex gap-2 ms-3">
-                        <button class="btn btn-light" onclick="openSignupModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                            <i class="fas fa-user-plus"></i> Sign Up
-                        </button>
-                        <button class="btn btn-primary" onclick="openLoginModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                            <i class="fas fa-sign-in-alt"></i> Login
-                        </button>
-                    </div>
-                    <div id="userInfo" class="d-none align-items-center gap-2 ms-3" style="min-width: 250px;"></div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </nav>
 
-    <!-- Emergency Hero Section -->
-    <section class="emergency-hero">
-        <div class="container text-center">
-            <h1 data-aos="fade-up">24/7 Emergency Services</h1>
-            <p data-aos="fade-up" data-aos-delay="100">When You Need Us Most, We're Here For You</p>
-            <div data-aos="zoom-in" data-aos-delay="200">
-                <div class="emergency-contact-badge">
-                    <i class="fas fa-phone-alt"></i> Emergency: 911
-                </div>
-                <div class="emergency-contact-badge">
-                    <i class="fas fa-ambulance"></i> Ambulance: 1-800-999-8888
-                </div>
+    <!-- EMERGENCY HERO -->
+    <header
+      class="py-5"
+      style="
+        background: linear-gradient(
+          180deg,
+          rgba(227, 75, 75, 0.1),
+          rgba(255, 255, 255, 0.02)
+        );
+      "
+    >
+      <div class="container" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h1 class="display-5">
+              Emergency Services — 24/7 Care When You Need It Most
+            </h1>
+            <p class="text-muted-2">
+              Rapid response ambulances, dedicated ER staff, and immediate
+              surgical readiness.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <div class="card p-3 d-inline-block" style="border-radius: 12px">
+              <h5 class="mb-1 text-danger">CALL NOW</h5>
+              <h4 class="mb-0">1800-123-456</h4>
+              <small class="text-muted-2">Available 24/7</small>
+              <div class="mt-3">
+                <a href="tel:1800123456" class="btn btn-danger">Call Now</a>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </header>
 
-    <!-- Emergency Statistics -->
-    <section style="background: var(--gradient-primary); color: white; padding: 60px 0;">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="3" data-suffix=" min">0</div>
-                        <div class="stat-label">Average Response Time</div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Ambulances Available</div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="35000">0</div>
-                        <div class="stat-label">Emergency Cases/Year</div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="98">0</div>
-                        <div class="stat-label" data-suffix="%">Success Rate</div>
-                    </div>
-                </div>
+    <main class="py-5">
+      <div class="container">
+        <!-- Ambulance Services -->
+        <h4 data-aos="fade-up">Ambulance Services</h4>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card custom p-4">
+              <h5>Advanced Life Support</h5>
+              <p class="text-muted-2">
+                Fully equipped ambulances with trained paramedics and cardiac
+                monitors.
+              </p>
+              <p class="kicker">
+                <strong>Response Time:</strong> Avg. 8-12 mins
+              </p>
             </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div class="card custom p-4">
+              <h5>Rapid Response Unit</h5>
+              <p class="text-muted-2">
+                Motorbike and rapid small vehicle response for dense urban
+                areas.
+              </p>
+              <p class="kicker">
+                <strong>Response Time:</strong> Avg. 4-7 mins
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="card custom p-4">
+              <h5>Direct ER Access</h5>
+              <p class="text-muted-2">
+                Priority triage and immediate admission to ER on arrival.
+              </p>
+              <p class="kicker"><strong>Contact:</strong> 1800-123-456</p>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Ambulance Services -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ambulance Services</h2>
-                <p class="section-subtitle">Fast, reliable, and professional emergency response</p>
+        <!-- Emergency Staff -->
+        <h4 data-aos="fade-up">Emergency Staff</h4>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card p-3 doctor-card">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?paramedic"
+                  alt="Staff"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Dr. Kamran</h6>
+                  <small class="text-muted-2">Head of Emergency</small>
+                </div>
+              </div>
             </div>
-            <div class="ambulance-list">
-                <div class="ambulance-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ambulance-item-title">
-                        <i class="fas fa-truck-medical"></i>
-                        <div>
-                            <h5 style="margin: 0;">Basic Life Support</h5>
-                        </div>
-                    </div>
-                    <p>Non-emergency patient transport with trained paramedics and basic medical equipment.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong>Fleet:</strong> 20 units | <strong>Response:</strong> 5-7 minutes
-                    </div>
-                </div>
-                <div class="ambulance-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="ambulance-item-title">
-                        <i class="fas fa-ambulance"></i>
-                        <div>
-                            <h5 style="margin: 0;">Advanced Life Support</h5>
-                        </div>
-                    </div>
-                    <p>Advanced medical interventions with critical care specialists and life support equipment.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong>Fleet:</strong> 20 units | <strong>Response:</strong> 3-5 minutes
-                    </div>
-                </div>
-                <div class="ambulance-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="ambulance-item-title">
-                        <i class="fas fa-helicopter"></i>
-                        <div>
-                            <h5 style="margin: 0;">Air Ambulance</h5>
-                        </div>
-                    </div>
-                    <p>Helicopter emergency medical services for critical trauma and long-distance transfers.</p>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong>Fleet:</strong> 2 helicopters | <strong>Response:</strong> 10-15 minutes
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Emergency Staff -->
-    <section style="background: var(--surface-color); border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Emergency Medical Team</h2>
-                <p class="section-subtitle">Highly trained specialists ready 24/7</p>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div class="card p-3 doctor-card">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?nurse"
+                  alt="Staff"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Nurse Ayesha</h6>
+                  <small class="text-muted-2">Senior ER Nurse</small>
+                </div>
+              </div>
             </div>
-            <div class="grid grid-3">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-content text-center">
-                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-accent); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h5>Dr. Harold Adams</h5>
-                        <p style="color: var(--accent-color); font-weight: 600;">Emergency Director</p>
-                        <p class="card-text">20+ years in emergency medicine and trauma care</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-content text-center">
-                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-accent); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h5>Nurse Linda Martinez</h5>
-                        <p style="color: var(--accent-color); font-weight: 600;">Trauma Specialist</p>
-                        <p class="card-text">Certified trauma nurse with extensive ICU experience</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-content text-center">
-                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-accent); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-stethoscope"></i>
-                        </div>
-                        <h5>Dr. Christopher Lee</h5>
-                        <p style="color: var(--accent-color); font-weight: 600;">Paramedic Chief</p>
-                        <p class="card-text">Advanced life support instructor and field paramedic supervisor</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Emergency Protocols -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Emergency Protocols</h2>
-                <p class="section-subtitle">We follow international standards for emergency response</p>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="card p-3 doctor-card">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?doctor,emergency"
+                  alt="Staff"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Dr. Farah</h6>
+                  <small class="text-muted-2">ER Surgeon</small>
+                </div>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 mb-4" data-aos="fade-right">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <h5>Call & Triage</h5>
-                            <p>24/7 emergency call center with trained dispatchers. All calls are recorded and prioritized based on severity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-left">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-truck"></i>
-                            </div>
-                            <h5>Response & Transport</h5>
-                            <p>Rapid deployment of ambulance with GPS tracking and real-time communication with hospital.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-hospital"></i>
-                            </div>
-                            <h5>Hospital Arrival</h5>
-                            <p>Pre-alert system ensures emergency department is prepared with specialists and equipment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="100">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-surgery"></i>
-                            </div>
-                            <h5>Emergency Care</h5>
-                            <p>Immediate assessment, treatment, and stabilization in our fully equipped emergency ward.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Emergency Contacts -->
-    <section style="background: var(--surface-color); border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon" style="background: linear-gradient(135deg, #FF6B6B 0%, #E53935 100%);">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <h5>Emergency Hotline</h5>
-                            <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-color);">911</p>
-                            <p class="text-muted">Available 24/7 for emergency medical assistance</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon" style="background: linear-gradient(135deg, #FF6B6B 0%, #E53935 100%);">
-                                <i class="fas fa-ambulance"></i>
-                            </div>
-                            <h5>Ambulance Service</h5>
-                            <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-color);">1-800-999-8888</p>
-                            <p class="text-muted">Request ambulance for medical emergencies</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon" style="background: linear-gradient(135deg, #FF6B6B 0%, #E53935 100%);">
-                                <i class="fas fa-message"></i>
-                            </div>
-                            <h5>WhatsApp Alert</h5>
-                            <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-color);">+1-800-123-4567</p>
-                            <p class="text-muted">Send emergency alert via WhatsApp</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Counters -->
+        <h4 data-aos="fade-up">Hospital Emergency Data</h4>
+        <div class="row g-4 mb-4">
+          <div class="col-md-3" data-aos="fade-up">
+            <div class="footer-card js-counter">
+              <div class="num" data-target="8">0</div>
+              <div class="kicker">Avg Response (mins)</div>
             </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="80">
+            <div class="footer-card js-counter">
+              <div class="num" data-target="12">0</div>
+              <div class="kicker">Ambulances</div>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="160">
+            <div class="footer-card js-counter">
+              <div class="num" data-target="40">0</div>
+              <div class="kicker">ER Beds</div>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="240">
+            <div class="footer-card js-counter">
+              <div class="num" data-target="120">0</div>
+              <div class="kicker">ER Staff</div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Emergency Tips -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What To Do In An Emergency</h2>
-                <p class="section-subtitle">Follow these steps to ensure quick and effective response</p>
+        <!-- Location & CTA -->
+        <div class="row g-4 align-items-center mt-4">
+          <div class="col-md-6" data-aos="fade-right">
+            <h5>Find Us</h5>
+            <p class="text-muted-2">
+              123 Health Ave, City — Emergency Entrance 2
+            </p>
+            <a
+              href="https://www.google.com/maps?q=london"
+              target="_blank"
+              class="btn btn-outline-light"
+              >Open in Maps</a
+            >
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.google.com/maps?q=london&output=embed"
+                title="map"
+                style="border: 0"
+              ></iframe>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div style="background: var(--surface-color); border-left: 4px solid var(--accent-color); padding: 2rem; border-radius: var(--border-radius-md);" data-aos="fade-up">
-                        <div class="mb-3">
-                            <h5 style="color: var(--accent-color);">
-                                <i class="fas fa-check-circle"></i> Step 1: Stay Calm
-                            </h5>
-                            <p class="text-muted">Keep calm and assess the situation. Move to a safe location if possible.</p>
-                        </div>
-                        <hr>
-                        <div class="mb-3">
-                            <h5 style="color: var(--accent-color);">
-                                <i class="fas fa-check-circle"></i> Step 2: Call Emergency
-                            </h5>
-                            <p class="text-muted">Call 911 immediately and describe symptoms clearly. Provide exact location.</p>
-                        </div>
-                        <hr>
-                        <div class="mb-3">
-                            <h5 style="color: var(--accent-color);">
-                                <i class="fas fa-check-circle"></i> Step 3: First Aid
-                            </h5>
-                            <p class="text-muted">Follow dispatcher's instructions. Perform CPR or first aid if trained.</p>
-                        </div>
-                        <hr>
-                        <div class="mb-0">
-                            <h5 style="color: var(--accent-color);">
-                                <i class="fas fa-check-circle"></i> Step 4: Await Help
-                            </h5>
-                            <p class="text-muted">Stay on the line with dispatcher. Keep patient immobilized if possible.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </main>
 
-    <!-- CTA Section -->
-    <section style="background: var(--accent-color); color: white; text-align: center; padding: 80px 0;">
-        <div class="container" data-aos="fade-up">
-            <h2>In Case of Emergency</h2>
-            <p style="font-size: 1.2rem; margin: 1rem 0 2rem;">Call 911 or contact our ambulance service immediately</p>
-            <button class="btn btn-primary" onclick="alert('Emergency Number: +1 800-999-8888')" style="color: white; border: none; background: white; color: var(--accent-color);">
-                <i class="fas fa-phone-alt"></i> Call Now
-            </button>
-        </div>
-    </section>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="footer-card">
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://via.placeholder.com/100x100?text=TA"
+                  alt="Tanzeel Ahmed"
+                  style="
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 12px;
+                    margin-right: 12px;
+                  "
+                />
+                <div>
+                  <strong>Tanzeel Ahmed</strong>
+                  <div class="small text-muted-2">
+                    Software Engineering Student | Web Developer | Tech
+                    Enthusiast
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="developer-profile" data-aos="fade-up">
-                <div class="developer-avatar">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="developer-name">Tanzeel Ahmed</div>
-                <div class="developer-tagline">Software Engineering Student | Web Developer | Tech Enthusiast</div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" target="_blank" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/Tanzeel804" target="_blank" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tanzeelahmedpov/" target="_blank" class="social-link" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/tanzeelahmedpov" target="_blank" class="social-link" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Check out more projects on <a href="https://github.com/Tanzeel804" target="_blank" style="color: var(--primary-color);">GitHub</a> | 
-                    <a href="https://tanzeel804.github.io/portfolio-main/" target="_blank" style="color: var(--primary-color);">Visit Portfolio</a>
-                </p>
-            </div>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h5>Hospital</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="doctors.html">Doctors</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a href="services.html">Cardiology</a></li>
-                        <li><a href="services.html">Neurology</a></li>
-                        <li><a href="services.html">Orthopedics</a></li>
-                        <li><a href="services.html">Pediatrics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Emergency</h5>
-                    <ul>
-                        <li><a href="emergency.html">24/7 Services</a></li>
-                        <li><a href="emergency.html">Ambulance</a></li>
-                        <li><a href="emergency.html">Emergency Contact</a></li>
-                        <li><a href="contact.html">Quick Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Hospital St, City</li>
-                        <li><i class="fas fa-phone"></i> +1 800-123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@medicarplus.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Available</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    &copy; 2025 Tanzeel Ahmed. All Rights Reserved. | MediCare Plus Hospital
-                </div>
-                <button class="back-to-top" title="Back to Top">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
-            </div>
+          <div class="col-lg-2">
+            <h6>Quick Links</h6>
+            <ul class="list-unstyled text-muted-2">
+              <li><a href="index.html">Home</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h6>Contact</h6>
+            <p class="text-muted-2 mb-1">Emergency: 1800-123-456</p>
+          </div>
+
+          <div class="col-lg-3">
+            <h6>Opening Hours</h6>
+            <p class="text-muted-2 mb-0">24/7 Emergency</p>
+          </div>
         </div>
+      </div>
     </footer>
 
-    <!-- Auth Modals -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="signupMessages"></div>
-                    <form id="signupForm">
-                        <div class="mb-3">
-                            <label for="signupName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="signupName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="signupEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="signupPassword" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="signupConfirmPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fas fa-user-plus"></i> Create Account
-                        </button>
-                    </form>
-                    <p class="text-center mt-3">Already have an account? 
-                        <a href="#" data-bs-dismiss="modal" onclick="openLoginModal()">Login here</a>
-                    </p>
-                </div>
+    <button id="backToTop" class="btn btn-primary" title="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- signup/login modals -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form id="signupForm">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign Up</h5>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label
+                ><input id="signupName" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label
+                ><input
+                  id="signupEmail"
+                  type="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label
+                ><input
+                  id="signupPassword"
+                  type="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label
+                ><input
+                  id="signupPassword2"
+                  type="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                type="button"
+              >
+                Cancel</button
+              ><button class="btn btn-primary" type="submit">
+                Create Account
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="loginMessages"></div>
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="loginEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" required>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">
-                                Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fas fa-sign-in-alt"></i> Login
-                        </button>
-                    </form>
-                    <p class="text-center mt-3">Don't have an account? 
-                        <a href="#" data-bs-dismiss="modal" onclick="openSignupModal()">Sign up here</a>
-                    </p>
-                </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form id="loginForm">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Email</label
+                ><input
+                  id="loginEmail"
+                  type="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label
+                ><input
+                  id="loginPassword"
+                  type="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                type="button"
+              >
+                Cancel</button
+              ><button class="btn btn-primary" type="submit">Login</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
