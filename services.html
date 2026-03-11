@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Services - MediCare Plus Hospital</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234A90E2' width='100' height='100'/><text x='50' y='60' font-size='60' fill='white' text-anchor='middle' dy='.3em'>+</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hospital-user brand-icon"></i>
+                MediCare Plus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doctors.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emergency.html">Emergency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="developer.html">Developer</a>
+                    </li>
+                </ul>
+                <div class="navbar-icons">
+                    <button class="theme-toggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div id="authButtons" class="d-flex gap-2 ms-3">
+                        <button class="btn btn-light" onclick="openSignupModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                            <i class="fas fa-user-plus"></i> Sign Up
+                        </button>
+                        <button class="btn btn-primary" onclick="openLoginModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </div>
+                    <div id="userInfo" class="d-none align-items-center gap-2 ms-3" style="min-width: 250px;"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 400px;">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Our Medical Services</h1>
+                <p class="hero-subtitle">Comprehensive healthcare solutions for all your medical needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section>
+        <div class="container">
+            <div class="grid">
+                <!-- Cardiology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h5 class="service-title">Cardiology</h5>
+                    <p>Comprehensive cardiac care including diagnostic services, interventional procedures, and preventive cardiology. Our experienced cardiologists treat all heart and cardiovascular conditions.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Neurology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h5 class="service-title">Neurology</h5>
+                    <p>Expert diagnosis and treatment of neurological disorders including stroke, epilepsy, Parkinson's disease, and other brain and nervous system conditions.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Orthopedics -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h5 class="service-title">Orthopedics</h5>
+                    <p>Specialized treatment for bone fractures, joint disorders, sports injuries, and orthopedic surgery. Advanced arthroscopic and vertebral procedures available.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Pediatrics -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h5 class="service-title">Pediatrics</h5>
+                    <p>Comprehensive pediatric care for infants, children, and adolescents. Vaccinations, growth monitoring, neonatal care, and developmental pediatrics.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- General Surgery -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-scalpel"></i>
+                    </div>
+                    <h5 class="service-title">General Surgery</h5>
+                    <p>Expert surgical services for general conditions including laparoscopic surgery, GI procedures, and emergency surgical interventions.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Gynecology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h5 class="service-title">Gynecology</h5>
+                    <p>Women's health services including obstetrics, fertility treatment, contraception counseling, and advanced gynecological procedures.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Dermatology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h5 class="service-title">Dermatology</h5>
+                    <p>Treatment of skin conditions including acne, allergies, psoriasis, and dermatologic surgery. Cosmetic and laser procedures available.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- ENT (Otolaryngology) -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="service-icon">
+                        <i class="fas fa-ear"></i>
+                    </div>
+                    <h5 class="service-title">ENT Services</h5>
+                    <p>Diagnosis and treatment of ear, nose, throat, and voice disorders. Hearing aids, sleep apnea treatment, and ENT surgery.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Gastroenterology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-flask-vial"></i>
+                    </div>
+                    <h5 class="service-title">Gastroenterology</h5>
+                    <p>Treatment of GI disorders including colonoscopy, endoscopy, and management of ulcers, IBS, and inflammatory bowel diseases.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Ophthalmology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="550">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h5 class="service-title">Ophthalmology</h5>
+                    <p>Complete eye care including vision correction, cataract surgery, LASIK, and treatment of diabetic retinopathy and glaucoma.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Oncology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-radiation"></i>
+                    </div>
+                    <h5 class="service-title">Oncology</h5>
+                    <p>Cancer diagnosis and treatment including chemotherapy, radiation therapy, immunotherapy, and multimodular cancer care protocols.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+
+                <!-- Radiology -->
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="650">
+                    <div class="service-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h5 class="service-title">Radiology</h5>
+                    <p>Advanced imaging services including X-ray, CT scanning, MRI, ultrasound, and interventional radiology procedures.</p>
+                    <a href="#" class="btn btn-light" style="margin-top: 1rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: var(--gradient-secondary); color: white; text-align: center; padding: 80px 0;">
+        <div class="container" data-aos="fade-up">
+            <h2>Need Medical Help?</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0 2rem;">Book an appointment with our specialists today</p>
+            <button class="btn btn-primary" onclick="openSignupModal()" style="color: white; border: none;">
+                <i class="fas fa-calendar-check"></i> Schedule Appointment
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="developer-profile" data-aos="fade-up">
+                <div class="developer-avatar">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="developer-name">Tanzeel Ahmed</div>
+                <div class="developer-tagline">Software Engineering Student | Web Developer | Tech Enthusiast</div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Tanzeel804" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tanzeelahmedpov/" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/tanzeelahmedpov" target="_blank" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Check out more projects on <a href="https://github.com/Tanzeel804" target="_blank" style="color: var(--primary-color);">GitHub</a> | 
+                    <a href="https://tanzeel804.github.io/portfolio-main/" target="_blank" style="color: var(--primary-color);">Visit Portfolio</a>
+                </p>
+            </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Hospital</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Orthopedics</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Emergency</h5>
+                    <ul>
+                        <li><a href="emergency.html">24/7 Services</a></li>
+                        <li><a href="emergency.html">Ambulance</a></li>
+                        <li><a href="emergency.html">Emergency Contact</a></li>
+                        <li><a href="contact.html">Quick Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Hospital St, City</li>
+                        <li><i class="fas fa-phone"></i> +1 800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicarplus.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 Tanzeel Ahmed. All Rights Reserved. | MediCare Plus Hospital
+                </div>
+                <button class="back-to-top" title="Back to Top">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modals -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="signupMessages"></div>
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? 
+                        <a href="#" data-bs-dismiss="modal" onclick="openLoginModal()">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="loginMessages"></div>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </form>
+                    <p class="text-center mt-3">Don't have an account? 
+                        <a href="#" data-bs-dismiss="modal" onclick="openSignupModal()">Sign up here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
