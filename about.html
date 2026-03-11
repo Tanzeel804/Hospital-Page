@@ -1,411 +1,188 @@
-<!DOCTYPE html>
+]<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - MediCare Plus Hospital</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234A90E2' width='100' height='100'/><text x='50' y='60' font-size='60' fill='white' text-anchor='middle' dy='.3em'>+</text></svg>">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&family=Zen+Dots&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — MediCare Plus</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Albert+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/00aaff/hospital-cross.png">
 </head>
 <body>
-    <div class="scroll-progress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- NAVBAR (same structure as index) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.icons8.com/ios-filled/40/ffffff/hospital.png" alt="logo" style="width:34px;margin-right:8px;">
+        <span class="fw-bold">MediCare<span class="text-muted-2">+</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-4 me-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
+          <li class="nav-item"><a href="emergency.html" class="nav-link text-danger">Emergency</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="developer.html" class="nav-link">Developer</a></li>
+        </ul>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-hospital-user brand-icon"></i>
-                MediCare Plus
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="emergency.html">Emergency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="developer.html">Developer</a>
-                    </li>
-                </ul>
-                <div class="navbar-icons">
-                    <button class="theme-toggle" title="Toggle Theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <div id="authButtons" class="d-flex gap-2 ms-3">
-                        <button class="btn btn-light" onclick="openSignupModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                            <i class="fas fa-user-plus"></i> Sign Up
-                        </button>
-                        <button class="btn btn-primary" onclick="openLoginModal()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                            <i class="fas fa-sign-in-alt"></i> Login
-                        </button>
-                    </div>
-                    <div id="userInfo" class="d-none align-items-center gap-2 ms-3" style="min-width: 250px;"></div>
-                </div>
-            </div>
+        <div id="authArea" class="d-flex align-items-center gap-2"></div>
+        <div class="ms-3 d-flex align-items-center">
+          <button id="themeToggleBtn" class="btn btn-sm btn-outline-light ms-2" title="Toggle theme"><i class="fa-solid fa-sun"></i></button>
         </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="hero" style="min-height: 400px;">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>About MediCare Plus</h1>
-                <p class="hero-subtitle">Leading healthcare provider committed to excellence and patient satisfaction</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hospital Story -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center gap-5">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="https://source.unsplash.com/500x400/?hospital" alt="Hospital Building" class="rounded-lg shadow-lg">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2>Our Story</h2>
-                    <p>MediCare Plus Hospital was founded in 2010 with a vision to provide world-class healthcare services to the community. Starting with a small clinic, we have grown into one of the most trusted medical institutions in the region.</p>
-                    <p>Our journey has been marked by continuous innovation, investment in cutting-edge technology, and recruitment of the finest medical talent. We believe in combining traditional compassion with modern medicine to deliver the best patient outcomes.</p>
-                    <p>Today, we operate multiple departments, employ over 150 dedicated healthcare professionals, and serve more than 50,000 patients annually.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section style="background: var(--surface-color); border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="grid grid-3">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h5 class="card-title">Our Mission</h5>
-                        <p class="card-text">To deliver exceptional healthcare services with integrity, compassion, and excellence, ensuring every patient receives personalized and evidence-based treatment.</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h5 class="card-title">Our Vision</h5>
-                        <p class="card-text">To be a leading healthcare provider recognized for innovation, quality care, and patient satisfaction, advancing medical excellence through continuous research and development.</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h5 class="card-title">Our Values</h5>
-                        <p class="card-text">Patient-centered care, medical excellence, integrity, teamwork, and continuous improvement drive every decision we make and every service we provide.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Facilities & Achievements -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Facilities</h2>
-                <p class="section-subtitle">State-of-the-art infrastructure for comprehensive healthcare</p>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <h5>Advanced Diagnostic Lab</h5>
-                            <p>Fully equipped laboratory with latest diagnostic equipment for accurate and rapid test results.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-procedures"></i>
-                            </div>
-                            <h5>Modern Operating Theaters</h5>
-                            <p>Multiple state-of-the-art operation theaters equipped with laminar airflow systems and advanced monitoring.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-bed"></i>
-                            </div>
-                            <h5>ICU Beds</h5>
-                            <p>50+ ICU beds with continuous monitoring and specialized equipment for critical care patients.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-icon">
-                                <i class="fas fa-x-ray"></i>
-                            </div>
-                            <h5>Imaging Center</h5>
-                            <p>Digital X-ray, ultrasound, CT scan, and MRI facilities for comprehensive diagnostic imaging.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements -->
-    <section style="background: var(--surface-color); border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Our Achievements</h2>
-            <div class="row">
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-award" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                    <h5>Best Hospital Award 2024</h5>
-                    <p class="text-muted">Recognized for excellence in patient care and medical services</p>
-                </div>
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-certificate" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                    <h5>ISO 9001 Certified</h5>
-                    <p class="text-muted">International quality management system certification</p>
-                </div>
-                <div class="col-md-4 text-center mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-star" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                    <h5>5-Star Rating</h5>
-                    <p class="text-muted">Consistently rated 5 stars by our satisfied patients</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Leadership Team</h2>
-                <p class="section-subtitle">Experienced professionals dedicated to healthcare excellence</p>
-            </div>
-            <div class="grid grid-3">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-content text-center">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-primary); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h5>Dr. Robert Wilson</h5>
-                        <p style="color: var(--primary-color); font-weight: 600;">Chief Medical Officer</p>
-                        <p class="card-text">20+ years of experience in healthcare administration and patient care.</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-content text-center">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-secondary); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-hospital"></i>
-                        </div>
-                        <h5>Dr. Patricia Davis</h5>
-                        <p style="color: var(--secondary-color); font-weight: 600;">Hospital Administrator</p>
-                        <p class="card-text">Expert in hospital management and operational excellence.</p>
-                    </div>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-content text-center">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-accent); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h5>Dr. Michael Brown</h5>
-                        <p style="color: var(--accent-color); font-weight: 600;">Director, Clinical Services</p>
-                        <p class="card-text">Specialized in emergency care and critical patient management.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="developer-profile" data-aos="fade-up">
-                <div class="developer-avatar">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="developer-name">Tanzeel Ahmed</div>
-                <div class="developer-tagline">Software Engineering Student | Web Developer | Tech Enthusiast</div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" target="_blank" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/Tanzeel804" target="_blank" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tanzeelahmedpov/" target="_blank" class="social-link" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/tanzeelahmedpov" target="_blank" class="social-link" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Check out more projects on <a href="https://github.com/Tanzeel804" target="_blank" style="color: var(--primary-color);">GitHub</a> | 
-                    <a href="https://tanzeel804.github.io/portfolio-main/" target="_blank" style="color: var(--primary-color);">Visit Portfolio</a>
-                </p>
-            </div>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h5>Hospital</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="doctors.html">Doctors</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a href="services.html">Cardiology</a></li>
-                        <li><a href="services.html">Neurology</a></li>
-                        <li><a href="services.html">Orthopedics</a></li>
-                        <li><a href="services.html">Pediatrics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Emergency</h5>
-                    <ul>
-                        <li><a href="emergency.html">24/7 Services</a></li>
-                        <li><a href="emergency.html">Ambulance</a></li>
-                        <li><a href="emergency.html">Emergency Contact</a></li>
-                        <li><a href="contact.html">Quick Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Hospital St, City</li>
-                        <li><i class="fas fa-phone"></i> +1 800-123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@medicarplus.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Available</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    &copy; 2025 Tanzeel Ahmed. All Rights Reserved. | MediCare Plus Hospital
-                </div>
-                <button class="back-to-top" title="Back to Top">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Auth Modals (same as home page) -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="signupMessages"></div>
-                    <form id="signupForm">
-                        <div class="mb-3">
-                            <label for="signupName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="signupName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="signupEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="signupPassword" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="signupConfirmPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fas fa-user-plus"></i> Create Account
-                        </button>
-                    </form>
-                    <p class="text-center mt-3">Already have an account? 
-                        <a href="#" data-bs-dismiss="modal" onclick="openLoginModal()">Login here</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </nav>
 
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="loginMessages"></div>
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="loginEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" required>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">
-                                Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fas fa-sign-in-alt"></i> Login
-                        </button>
-                    </form>
-                    <p class="text-center mt-3">Don't have an account? 
-                        <a href="#" data-bs-dismiss="modal" onclick="openSignupModal()">Sign up here</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+  <!-- PAGE HEADER -->
+  <header class="py-5" style="background-image: url('https://source.unsplash.com/1600x500/?hospital,building'); background-size:cover; background-position:center;">
+    <div class="container text-white" data-aos="fade-up">
+      <h1 class="display-5">About Us</h1>
+      <p class="lead text-muted-2">Learn about our mission, story, and the care we give every day.</p>
     </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h3>Our Story</h3>
+          <p class="text-muted-2">MediCare Plus started as a small clinic with one simple goal: provide trustworthy and compassionate care. Over the years we expanded into a full hospital providing specialists, emergency services, and modern diagnostics.</p>
+          <p class="text-muted-2">We prioritize patient safety, evidence-based medicine, and community wellness programs to make healthcare accessible to all.</p>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <img src="https://source.unsplash.com/900x600/?healthcare,team" alt="team" class="img-fluid rounded-3 shadow-sm">
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="row mt-5 gy-4">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="stat footer-card js-counter">
+            <div class="num" data-target="50000">0</div>
+            <div class="kicker">Patients Treated</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="80">
+          <div class="stat footer-card js-counter">
+            <div class="num" data-target="200">0</div>
+            <div class="kicker">Specialist Doctors</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="160">
+          <div class="stat footer-card js-counter">
+            <div class="num" data-target="300">0</div>
+            <div class="kicker">Hospital Beds</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="240">
+          <div class="stat footer-card js-counter">
+            <div class="num" data-target="25">0</div>
+            <div class="kicker">Years of Service</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission & Vision -->
+      <div class="row mt-5 gy-4">
+        <div class="col-md-6" data-aos="fade-up"><div class="card p-4 custom"><h5>Mission</h5><p class="text-muted-2">Deliver compassionate, high-quality healthcare to every patient with dignity.</p></div></div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="card p-4 custom"><h5>Vision</h5><p class="text-muted-2">To be the leading healthcare provider in our region known for excellence and innovation.</p></div></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer (same as index) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="footer-card">
+            <div class="d-flex align-items-center">
+              <img src="https://via.placeholder.com/100x100?text=TA" alt="Tanzeel Ahmed" style="width:72px;height:72px;border-radius:12px;margin-right:12px;">
+              <div>
+                <strong>Tanzeel Ahmed</strong>
+                <div class="small text-muted-2">Software Engineering Student | Web Developer | Tech Enthusiast</div>
+              </div>
+            </div>
+            <p class="mt-3 text-muted-2">Building modern web experiences.</p>
+            <div class="d-flex mt-3">
+              <a class="social-icon" href="https://github.com/Tanzeel804" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="social-icon" href="https://www.instagram.com/tanzeelahmedpov/" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled text-muted-2">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h6>Contact</h6>
+          <p class="text-muted-2 mb-1">123 Health Ave, City</p>
+          <p class="text-muted-2 mb-1">Phone: 1800-123-456</p>
+          <p class="text-muted-2 mb-0">Email: info@medicareplus.example</p>
+        </div>
+
+        <div class="col-lg-3">
+          <h6>Opening Hours</h6>
+          <p class="text-muted-2 mb-0">Mon - Sun: 24/7 Emergency</p>
+          <div class="mt-3"><small class="text-muted-2">© 2025 Tanzeel Ahmed. All Rights Reserved.</small></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="btn btn-primary" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- SIGNUP / LOGIN modals (same markup as index) -->
+  <!-- Signup -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <form id="signupForm">
+        <div class="modal-header"><h5 class="modal-title">Sign Up</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label">Full Name</label><input id="signupName" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Email</label><input id="signupEmail" type="email" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Password</label><input id="signupPassword" type="password" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Confirm Password</label><input id="signupPassword2" type="password" class="form-control" required></div>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button><button class="btn btn-primary" type="submit">Create Account</button></div>
+      </form>
+    </div></div>
+  </div>
+
+  <!-- Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <form id="loginForm">
+        <div class="modal-header"><h5 class="modal-title">Login</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label">Email</label><input id="loginEmail" type="email" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Password</label><input id="loginPassword" type="password" class="form-control" required></div>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button><button class="btn btn-primary" type="submit">Login</button></div>
+      </form>
+    </div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

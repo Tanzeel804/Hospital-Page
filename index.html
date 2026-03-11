@@ -1,204 +1,273 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediCare Plus Hospital - Premium Healthcare</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MediCare Plus — Your Health, Our Priority</title>
+
+    <!-- Google Fonts -->
+    <!-- Supreme Spihe & Zen Dot Z might not exist on Google Fonts; they are attempted here.
+       If unavailable, browser falls back to DM Sans / Albert Sans. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Albert+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Favicon -->
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234A90E2' width='100' height='100'/><text x='50' y='60' font-size='60' fill='white' text-anchor='middle' dy='.3em'>+</text></svg>"
-    />
-
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- AOS (Animate on Scroll) -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      rel="stylesheet"
+      href="https://img.icons8.com/ios-filled/50/00aaff/hospital-cross.png"
     />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <i class="fas fa-hospital-user brand-icon"></i>
-          MediCare Plus
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="https://img.icons8.com/ios-filled/40/ffffff/hospital.png"
+            alt="logo"
+            style="width: 34px; margin-right: 8px"
+          />
+          <span class="fw-bold"
+            >MediCare<span class="text-muted-2">+</span></span
+          >
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#navMain"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-4 me-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a href="about.html" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
+              <a href="services.html" class="nav-link">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
+              <a href="doctors.html" class="nav-link">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="emergency.html">Emergency</a>
+              <a href="emergency.html" class="nav-link text-danger"
+                >Emergency</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a href="contact.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="developer.html">Developer</a>
+              <a href="developer.html" class="nav-link">Developer</a>
             </li>
           </ul>
-          <div class="navbar-icons">
-            <button class="theme-toggle" title="Toggle Theme">
-              <i class="fas fa-moon"></i>
+
+          <div id="authArea" class="d-flex align-items-center gap-2">
+            <!-- Filled by script.js -->
+          </div>
+
+          <div class="ms-3 d-flex align-items-center">
+            <button
+              id="themeToggleBtn"
+              class="btn btn-sm btn-outline-light ms-2"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-sun"></i>
             </button>
-            <div id="authButtons" class="d-flex gap-2 ms-3">
-              <button
-                class="btn btn-light"
-                onclick="openSignupModal()"
-                style="padding: 0.5rem 1rem; font-size: 0.85rem"
-              >
-                <i class="fas fa-user-plus"></i> Sign Up
-              </button>
-              <button
-                class="btn btn-primary"
-                onclick="openLoginModal()"
-                style="padding: 0.5rem 1rem; font-size: 0.85rem"
-              >
-                <i class="fas fa-sign-in-alt"></i> Login
-              </button>
-            </div>
-            <div
-              id="userInfo"
-              class="d-none align-items-center gap-2 ms-3"
-              style="min-width: 250px"
-            ></div>
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- HERO -->
+    <header class="hero">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="hero-content">
-              <h1>Your Health, Our Priority</h1>
-              <p class="hero-subtitle">
-                Comprehensive healthcare services with expert doctors and
-                state-of-the-art facilities.
-              </p>
-              <div>
-                <button class="btn btn-primary" onclick="openSignupModal()">
-                  <i class="fas fa-calendar-alt"></i> Book Appointment
-                </button>
-                <button class="btn btn-outline">
-                  <i class="fas fa-info-circle"></i> Learn More
-                </button>
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h1 class="hero-title display-5 mb-3">Your Health, Our Priority</h1>
+            <p class="lead text-muted-2">
+              24/7 emergency care, expert specialists, and compassionate
+              services tailored to you. Trusted healthcare for the whole family.
+            </p>
+            <div class="mt-4">
+              <a href="contact.html" class="btn btn-primary btn-lg me-2"
+                >Book Appointment</a
+              >
+              <a href="emergency.html" class="btn btn-outline-light btn-lg"
+                >Emergency Info</a
+              >
+            </div>
+            <div class="mt-4 d-flex gap-3 align-items-center">
+              <div class="emergency-badge">
+                <i class="fa-solid fa-ambulance"></i> Emergency 24/7
+              </div>
+              <div class="text-muted-2">
+                Call: <strong>1800-123-456</strong>
               </div>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="hero-image">
+
+          <div class="col-lg-6" data-aos="zoom-in">
+            <div class="card p-0 overflow-hidden" style="border-radius: 16px">
               <img
-                src="https://source.unsplash.com/500x500/?doctor,hospital"
-                alt="Healthcare Professional"
-                class="rounded-lg shadow-lg"
+                src="https://source.unsplash.com/900x600/?hospital,doctors"
+                alt="hospital"
+                class="img-fluid w-100"
               />
             </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center mb-4">
+          <div class="col-md-8" data-aos="fade-up">
+            <h3>Our Services</h3>
+            <p class="text-muted-2">
+              Comprehensive healthcare across specialties — personalized and
+              high-quality.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end" data-aos="fade-left">
+            <a href="services.html" class="btn btn-outline-light"
+              >View All Services</a
+            >
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card custom p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="bg-white bg-opacity-5 p-3 rounded-3">
+                  <i
+                    class="fa-solid fa-heart-pulse fa-2x"
+                    style="color: var(--primary)"
+                  ></i>
+                </div>
+                <div>
+                  <h5 class="mb-0">Cardiology</h5>
+                  <p class="small text-muted-2 mb-0">
+                    Advanced heart care with modern cath lab facilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div class="card custom p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="bg-white bg-opacity-5 p-3 rounded-3">
+                  <i
+                    class="fa-solid fa-brain fa-2x"
+                    style="color: var(--accent)"
+                  ></i>
+                </div>
+                <div>
+                  <h5 class="mb-0">Neurology</h5>
+                  <p class="small text-muted-2 mb-0">
+                    Neurosurgical and neurological treatment by experts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="card custom p-4 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="bg-white bg-opacity-5 p-3 rounded-3">
+                  <i class="fa-solid fa-baby fa-2x" style="color: #ffb703"></i>
+                </div>
+                <div>
+                  <h5 class="mb-0">Pediatrics</h5>
+                  <p class="small text-muted-2 mb-0">
+                    Caring for your child's health with warmth and expertise.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section
-      class="py-5"
-      style="
-        background: var(--surface-color);
-        border-top: 1px solid var(--border-color);
-      "
-    >
+    <!-- WHY CHOOSE US -->
+    <section class="py-5 bg-transparent">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose MediCare Plus?</h2>
-          <p class="section-subtitle">
-            Excellence in healthcare delivery with a patient-first approach
-          </p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-content">
-              <div class="card-icon">
-                <i class="fas fa-user-md"></i>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card p-4 custom">
+              <div class="mb-2">
+                <i
+                  class="fa-solid fa-clock fa-2x"
+                  style="color: var(--primary)"
+                ></i>
               </div>
-              <h5 class="card-title">Expert Doctors</h5>
-              <p class="card-text">
-                Board-certified specialists with 20+ years of experience in
-                their respective fields.
+              <h5>24/7 Emergency</h5>
+              <p class="text-muted-2">
+                Rapid response and dedicated ER teams available round the clock.
               </p>
             </div>
           </div>
-          <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-content">
-              <div class="card-icon">
-                <i class="fas fa-flask-vial"></i>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div class="card p-4 custom">
+              <div class="mb-2">
+                <i
+                  class="fa-solid fa-user-doctor fa-2x"
+                  style="color: var(--accent)"
+                ></i>
               </div>
-              <h5 class="card-title">Advanced Technology</h5>
-              <p class="card-text">
-                Latest medical equipment and diagnostic tools for accurate
-                diagnosis and treatment.
+              <h5>Expert Doctors</h5>
+              <p class="text-muted-2">
+                Board-certified specialists across all major fields.
               </p>
             </div>
           </div>
-          <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-content">
-              <div class="card-icon">
-                <i class="fas fa-clock"></i>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="card p-4 custom">
+              <div class="mb-2">
+                <i
+                  class="fa-solid fa-microscope fa-2x"
+                  style="color: #8b5cf6"
+                ></i>
               </div>
-              <h5 class="card-title">24/7 Support</h5>
-              <p class="card-text">
-                Round-the-clock emergency services with dedicated ambulance
-                fleet and trained staff.
+              <h5>Modern Labs</h5>
+              <p class="text-muted-2">
+                Accurate diagnostics with quick turnaround times.
               </p>
             </div>
           </div>
@@ -206,241 +275,112 @@
       </div>
     </section>
 
-    <!-- Services Overview -->
-    <section>
+    <!-- MEET OUR DOCTORS -->
+    <section class="py-5">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">
-            Comprehensive medical services designed for your wellbeing
-          </p>
-        </div>
-        <div class="grid">
-          <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-icon">
-              <i class="fas fa-heart"></i>
-            </div>
-            <h5 class="service-title">Cardiology</h5>
-            <p>Specialized cardiac care and interventional procedures</p>
+        <div class="row align-items-center mb-4">
+          <div class="col-md-8" data-aos="fade-up">
+            <h4>Meet Our Doctors</h4>
+            <p class="text-muted-2">
+              Highly experienced and compassionate specialists.
+            </p>
           </div>
-          <div class="service-card" data-aos="zoom-in" data-aos-delay="150">
-            <div class="service-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h5 class="service-title">Neurology</h5>
-            <p>Brain and nervous system disorder treatment</p>
-          </div>
-          <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-icon">
-              <i class="fas fa-bone"></i>
-            </div>
-            <h5 class="service-title">Orthopedics</h5>
-            <p>Bone and joint injury specialist care</p>
-          </div>
-          <div class="service-card" data-aos="zoom-in" data-aos-delay="250">
-            <div class="service-icon">
-              <i class="fas fa-baby"></i>
-            </div>
-            <h5 class="service-title">Pediatrics</h5>
-            <p>Specialized care for infants and children</p>
+          <div class="col-md-4 text-md-end" data-aos="fade-left">
+            <a href="doctors.html" class="btn btn-outline-light"
+              >View All Doctors</a
+            >
           </div>
         </div>
-        <div class="text-center mt-5">
-          <a href="services.html" class="btn btn-primary">
-            <i class="fas fa-arrow-right"></i> View All Services
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Featured Doctors -->
-    <section
-      style="
-        background: var(--surface-color);
-        border-top: 1px solid var(--border-color);
-      "
-    >
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Meet Our Doctors</h2>
-          <p class="section-subtitle">
-            Highly qualified healthcare professionals dedicated to your care
-          </p>
-        </div>
-        <div class="grid">
-          <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="doctor-image">
-              <img
-                src="https://source.unsplash.com/400x300/?doctor,man"
-                alt="Dr. James Anderson"
-              />
-            </div>
-            <div class="doctor-info">
-              <h5 class="doctor-name">Dr. James Anderson</h5>
-              <p class="doctor-specialty">Cardiology</p>
-              <p class="doctor-experience">
-                <i class="fas fa-briefcase"></i> 15 years experience
-              </p>
-              <div class="doctor-socials">
-                <a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+        <div class="row g-4">
+          <!-- doctor sample cards -->
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="doctor-card p-3">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?doctor,man"
+                  alt="Dr. Ali"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Dr. Ali Khan</h6>
+                  <small class="text-muted-2">Cardiologist • 15 yrs</small>
+                  <div class="mt-2">
+                    <a href="#" class="me-2 text-muted-2"
+                      ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                    <a href="#" class="me-2 text-muted-2"
+                      ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="doctor-image">
-              <img
-                src="https://source.unsplash.com/400x300/?doctor,woman"
-                alt="Dr. Sarah Johnson"
-              />
-            </div>
-            <div class="doctor-info">
-              <h5 class="doctor-name">Dr. Sarah Johnson</h5>
-              <p class="doctor-specialty">Neurology</p>
-              <p class="doctor-experience">
-                <i class="fas fa-briefcase"></i> 12 years experience
-              </p>
-              <div class="doctor-socials">
-                <a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="doctor-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="doctor-image">
-              <img
-                src="https://source.unsplash.com/400x300/?doctor,male"
-                alt="Dr. Michael Chen"
-              />
-            </div>
-            <div class="doctor-info">
-              <h5 class="doctor-name">Dr. Michael Chen</h5>
-              <p class="doctor-specialty">Orthopedics</p>
-              <p class="doctor-experience">
-                <i class="fas fa-briefcase"></i> 18 years experience
-              </p>
-              <div class="doctor-socials">
-                <a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-5">
-          <a href="doctors.html" class="btn btn-primary">
-            <i class="fas fa-users"></i> View All Doctors
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Statistics -->
-    <section
-      style="background: var(--gradient-primary); color: white; padding: 60px 0"
-    >
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-item">
-              <div class="stat-number" data-target="50000">0</div>
-              <div class="stat-label">Happy Patients</div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div class="doctor-card p-3">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?doctor,woman"
+                  alt="Dr. Saba"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Dr. Saba Iqbal</h6>
+                  <small class="text-muted-2">Pediatrician • 9 yrs</small>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-item">
-              <div class="stat-number" data-target="150">0</div>
-              <div class="stat-label">Expert Doctors</div>
-            </div>
-          </div>
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item">
-              <div class="stat-number" data-target="25">0</div>
-              <div class="stat-label">Medical Departments</div>
-            </div>
-          </div>
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-item">
-              <div class="stat-number" data-target="15">0</div>
-              <div class="stat-label">Years of Excellence</div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div class="doctor-card p-3">
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  src="https://source.unsplash.com/120x120/?surgeon"
+                  alt="Dr. Hamid"
+                  style="width: 72px; border-radius: 12px"
+                />
+                <div>
+                  <h6 class="mb-0">Dr. Hamid Raza</h6>
+                  <small class="text-muted-2">General Surgeon • 12 yrs</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section
-      style="
-        background: var(--surface-color);
-        border-top: 1px solid var(--border-color);
-      "
-    >
+    <!-- TESTIMONIALS -->
+    <section class="py-5 bg-transparent">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Our Patients Say</h2>
-          <p class="section-subtitle">
-            Hear from those who trust us with their health
-          </p>
-        </div>
+        <h4 data-aos="fade-up">Patient Testimonials</h4>
         <div
           id="testimonialCarousel"
           class="carousel slide"
           data-bs-ride="carousel"
           data-aos="fade-up"
+          data-aos-delay="80"
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="testimonial-card mx-auto" style="max-width: 600px">
-                <div class="testimonial-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                  "The care I received at MediCare Plus was exceptional. The
-                  doctors and staff are highly professional and compassionate. I
-                  recommend them to all my family and friends."
+              <div class="card p-4">
+                <p class="mb-2">
+                  "I received excellent care — the staff was kind and the
+                  treatment effective. Highly recommend!"
                 </p>
-                <p class="testimonial-author">— John Michael, Patient</p>
+                <small class="text-muted-2">— Aisha, Lahore</small>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="testimonial-card mx-auto" style="max-width: 600px">
-                <div class="testimonial-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                  "Outstanding medical facilities and expert consultation. The
-                  hospital staff made my entire treatment process smooth and
-                  stress-free. Truly grateful!"
+              <div class="card p-4">
+                <p class="mb-2">
+                  "Fast ER service and experienced doctors helped save my
+                  father's life. Grateful."
                 </p>
-                <p class="testimonial-author">— Emma Watson, Patient</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="testimonial-card mx-auto" style="max-width: 600px">
-                <div class="testimonial-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                  "Best hospital in the city! The doctors are incredibly skilled
-                  and the nursing staff is very caring. I felt safe and
-                  well-taken care of throughout my stay."
-                </p>
-                <p class="testimonial-author">— Robert Johnson, Patient</p>
+                <small class="text-muted-2">— Mohammad, Islamabad</small>
               </div>
             </div>
           </div>
@@ -450,7 +390,7 @@
             data-bs-target="#testimonialCarousel"
             data-bs-slide="prev"
           >
-            <i class="fas fa-chevron-left"></i>
+            <span class="carousel-control-prev-icon"></span>
           </button>
           <button
             class="carousel-control-next"
@@ -458,311 +398,243 @@
             data-bs-target="#testimonialCarousel"
             data-bs-slide="next"
           >
-            <i class="fas fa-chevron-right"></i>
+            <span class="carousel-control-next-icon"></span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section
-      style="
-        background: var(--gradient-secondary);
-        color: white;
-        text-align: center;
-        padding: 80px 0;
-      "
-    >
-      <div class="container" data-aos="fade-up">
-        <h2>Ready to Take Care of Your Health?</h2>
-        <p style="font-size: 1.2rem; margin: 1rem 0 2rem">
-          Book an appointment with our expert doctors today
-        </p>
-        <div>
-          <button
-            class="btn btn-primary"
-            onclick="openSignupModal()"
-            style="color: white; border: none"
-          >
-            <i class="fas fa-calendar-check"></i> Schedule Now
-          </button>
-          <a
-            href="contact.html"
-            class="btn btn-outline"
-            style="border-color: white; color: white"
-          >
-            <i class="fas fa-phone"></i> Contact Us
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- FOOTER (enhanced with developer branding) -->
+    <footer class="site-footer">
       <div class="container">
-        <div class="developer-profile" data-aos="fade-up">
-          <div class="developer-avatar">
-            <i class="fas fa-code"></i>
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="footer-card">
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://via.placeholder.com/100x100?text=TA"
+                  alt="Tanzeel Ahmed"
+                  style="
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 12px;
+                    margin-right: 12px;
+                  "
+                />
+                <div>
+                  <strong>Tanzeel Ahmed</strong>
+                  <div class="small text-muted-2">
+                    Software Engineering Student | Web Developer | Tech
+                    Enthusiast
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 text-muted-2">
+                Building modern web experiences. See projects on GitHub or visit
+                the developer page.
+              </p>
+              <div class="d-flex mt-3">
+                <a
+                  class="social-icon"
+                  href="https://github.com/Tanzeel804"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a
+                  class="social-icon"
+                  href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+                <a
+                  class="social-icon"
+                  href="https://www.instagram.com/tanzeelahmedpov/"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a
+                  class="social-icon"
+                  href="https://www.facebook.com/tanzeelahmedpov"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </div>
+            </div>
           </div>
-          <div class="developer-name">Tanzeel Ahmed</div>
-          <div class="developer-tagline">
-            Software Engineering Student | Web Developer | Tech Enthusiast
-          </div>
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/"
-              target="_blank"
-              class="social-link"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a
-              href="https://github.com/Tanzeel804"
-              target="_blank"
-              class="social-link"
-              title="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/tanzeelahmedpov/"
-              target="_blank"
-              class="social-link"
-              title="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/tanzeelahmedpov"
-              target="_blank"
-              class="social-link"
-              title="Facebook"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-muted)">
-            Check out more projects on
-            <a
-              href="https://github.com/Tanzeel804"
-              target="_blank"
-              style="color: var(--primary-color)"
-              >GitHub</a
-            >
-            |
-            <a
-              href="https://tanzeel804.github.io/portfolio-main/"
-              target="_blank"
-              style="color: var(--primary-color)"
-              >Visit Portfolio</a
-            >
-          </p>
-        </div>
-        <div class="footer-content">
-          <div class="footer-section">
-            <h5>Hospital</h5>
-            <ul>
+
+          <div class="col-lg-2">
+            <h6>Quick Links</h6>
+            <ul class="list-unstyled text-muted-2">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html">About</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-section">
-            <h5>Services</h5>
-            <ul>
-              <li><a href="services.html">Cardiology</a></li>
-              <li><a href="services.html">Neurology</a></li>
-              <li><a href="services.html">Orthopedics</a></li>
-              <li><a href="services.html">Pediatrics</a></li>
-            </ul>
+
+          <div class="col-lg-3">
+            <h6>Contact</h6>
+            <p class="text-muted-2 mb-1">123 Health Ave, City</p>
+            <p class="text-muted-2 mb-1">Phone: 1800-123-456</p>
+            <p class="text-muted-2 mb-0">Email: info@medicareplus.example</p>
           </div>
-          <div class="footer-section">
-            <h5>Emergency</h5>
-            <ul>
-              <li><a href="emergency.html">24/7 Services</a></li>
-              <li><a href="emergency.html">Ambulance</a></li>
-              <li><a href="emergency.html">Emergency Contact</a></li>
-              <li><a href="contact.html">Quick Support</a></li>
-            </ul>
+
+          <div class="col-lg-3">
+            <h6>Opening Hours</h6>
+            <p class="text-muted-2 mb-0">Mon - Sun: 24/7 Emergency</p>
+            <div class="mt-3">
+              <small class="text-muted-2"
+                >© 2025 Tanzeel Ahmed. All Rights Reserved.</small
+              >
+            </div>
           </div>
-          <div class="footer-section">
-            <h5>Contact</h5>
-            <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 123 Hospital St, City
-              </li>
-              <li><i class="fas fa-phone"></i> +1 800-123-4567</li>
-              <li><i class="fas fa-envelope"></i> info@medicarplus.com</li>
-              <li><i class="fas fa-clock"></i> 24/7 Available</li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="footer-copyright">
-            &copy; 2025 Tanzeel Ahmed. All Rights Reserved. | MediCare Plus
-            Hospital
-          </div>
-          <button class="back-to-top" title="Back to Top">
-            <i class="fas fa-chevron-up"></i>
-          </button>
         </div>
       </div>
     </footer>
 
-    <!-- Auth Modals -->
-    <!-- Signup Modal -->
-    <div
-      class="modal fade"
-      id="signupModal"
-      tabindex="-1"
-      aria-labelledby="signupModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
+    <!-- Back to top -->
+    <button id="backToTop" class="btn btn-primary" title="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- SIGNUP Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div id="signupMessages"></div>
-            <form id="signupForm">
+          <form id="signupForm">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign Up</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
               <div class="mb-3">
-                <label for="signupName" class="form-label">Full Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="signupName"
-                  required
-                />
+                <label class="form-label">Full Name</label
+                ><input id="signupName" class="form-control" required />
               </div>
               <div class="mb-3">
-                <label for="signupEmail" class="form-label"
-                  >Email Address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
+                <label class="form-label">Email</label
+                ><input
                   id="signupEmail"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="signupPassword" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="signupPassword"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="signupConfirmPassword" class="form-label"
-                  >Confirm Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="signupConfirmPassword"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn btn-primary w-100">
-                <i class="fas fa-user-plus"></i> Create Account
-              </button>
-            </form>
-            <p class="text-center mt-3">
-              Already have an account?
-              <a href="#" data-bs-dismiss="modal" onclick="openLoginModal()"
-                >Login here</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">
-              Login to Your Account
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div id="loginMessages"></div>
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email Address</label>
-                <input
                   type="email"
                   class="form-control"
-                  id="loginEmail"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input
+                <label class="form-label">Password</label
+                ><input
+                  id="signupPassword"
                   type="password"
                   class="form-control"
-                  id="loginPassword"
                   required
                 />
               </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="rememberMe"
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label
+                ><input
+                  id="signupPassword2"
+                  type="password"
+                  class="form-control"
+                  required
                 />
-                <label class="form-check-label" for="rememberMe">
-                  Remember me
-                </label>
               </div>
-              <button type="submit" class="btn btn-primary w-100">
-                <i class="fas fa-sign-in-alt"></i> Login
-              </button>
-            </form>
-            <p class="text-center mt-3">
-              Don't have an account?
-              <a href="#" data-bs-dismiss="modal" onclick="openSignupModal()"
-                >Sign up here</a
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                type="button"
               >
-            </p>
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                Create Account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form id="loginForm">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Email</label
+                ><input
+                  id="loginEmail"
+                  type="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label
+                ><input
+                  id="loginPassword"
+                  type="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Success Modal -->
+    <div
+      class="modal fade"
+      id="contactSuccessModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <div class="text-center">
+            <h5>Thank you!</h5>
+            <p>We received your message and will contact you soon.</p>
+            <button class="btn btn-primary" data-bs-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-    <!-- Custom JS -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
