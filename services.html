@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -30,7 +30,7 @@
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
           <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
-          <li class="nav-item"><a href="emergency.html" class="nav-link text-danger">Emergency</a></li>
+          <li class="nav-item"><a href="emergency.html" class="nav-link">Emergency</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           <li class="nav-item"><a href="developer.html" class="nav-link">Developer</a></li>
         </ul>
@@ -202,7 +202,7 @@
   </footer>
 
   <!-- BACK TO TOP BUTTON -->
-  <button id="backToTopBtn" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
   <!-- AUTH MODALS -->
   <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
@@ -225,6 +225,10 @@
             <div class="mb-3">
               <label for="signupPassword" class="form-label">Password</label>
               <input type="password" class="form-control" id="signupPassword" required/>
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword2" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="signupPassword2" required/>
             </div>
             <button type="submit" class="btn btn-primary w-100">Sign Up</button>
           </form>

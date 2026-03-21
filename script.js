@@ -70,10 +70,16 @@ function saveUsers(u) {
 
 function signupHandler(e) {
   e && e.preventDefault();
-  const name = document.getElementById("signupName").value.trim();
-  const email = document.getElementById("signupEmail").value.trim().toLowerCase();
-  const pass = document.getElementById("signupPassword").value;
-  const pass2 = document.getElementById("signupPassword2").value;
+  const nameEl = document.getElementById("signupName");
+  const emailEl = document.getElementById("signupEmail");
+  const passEl = document.getElementById("signupPassword");
+  const pass2El = document.getElementById("signupPassword2");
+  if (!nameEl || !emailEl || !passEl) return;
+
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim().toLowerCase();
+  const pass = passEl.value;
+  const pass2 = pass2El ? pass2El.value : pass;
 
   if (!name || !email || !pass || !pass2) {
     showToast("Please fill all fields", "danger");
@@ -168,7 +174,7 @@ function updateScrollProgress() {
    BACK TO TOP
    --------------------------- */
 function initBackToTop() {
-  const btn = document.getElementById("backToTop");
+  const btn = document.getElementById("backToTop") || document.getElementById("backToTopBtn");
   if (!btn) return;
   window.addEventListener("scroll", () => {
     btn.style.display = window.scrollY > 500 ? "flex" : "none";
@@ -185,7 +191,13 @@ function initDoctorFilter() {
   input.addEventListener("input", () => {
     const q = input.value.trim().toLowerCase();
     document.querySelectorAll(".doctor-card").forEach((card) => {
-      card.style.display = card.innerText.toLowerCase().includes(q) ? "" : "none";
+      const visible = card.innerText.toLowerCase().includes(q);
+      const col = card.closest(".col-md-4, .col-lg-4, .col-sm-6, .col-12");
+      if (col) {
+        col.style.display = visible ? "" : "none";
+      } else {
+        card.style.display = visible ? "" : "none";
+      }
     });
   });
 }
@@ -238,18 +250,35 @@ function runCounter(container) {
 function initContactValidation() {
   const form = document.getElementById("contactForm");
   if (!form) return;
+
+  const fields = Array.from(form.querySelectorAll("input[name], textarea[name]"));
+  const validators = {
+    name: (v) => v.trim().length > 1,
+    email: (v) => /^\S+@\S+\.\S+$/.test(v.trim()),
+    subject: (v) => v.trim().length > 2,
+    message: (v) => v.trim().length > 10,
+  };
+
+  const validateField = (field) => {
+    const name = field.getAttribute("name");
+    const rule = validators[name];
+    if (!rule) return true;
+    const valid = rule(field.value || "");
+    field.classList.toggle("is-invalid", !valid);
+    field.classList.toggle("is-valid", valid);
+    return valid;
+  };
+
+  fields.forEach((field) => {
+    field.addEventListener("input", () => validateField(field));
+    field.addEventListener("blur", () => validateField(field));
+  });
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = form.querySelector("[name='name']").value.trim();
-    const email = form.querySelector("[name='email']").value.trim();
-    const subject = form.querySelector("[name='subject']").value.trim();
-    const message = form.querySelector("[name='message']").value.trim();
-    if (!name || !email || !subject || !message) {
-      showToast("Please fill all fields", "danger");
-      return;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      showToast("Please enter a valid email", "danger");
+    const allValid = fields.every((field) => validateField(field));
+    if (!allValid) {
+      showToast("Please fix form errors before submitting", "danger");
       return;
     }
     showToast("Message sent successfully!", "success");
@@ -271,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animateCounters();
   initContactValidation();
 
-  if (window.AOS) AOS.init({ once: true, duration: 800, offset: 80 });
+  if (window.AOS) AOS.init({ duration: 1000, once: true, offset: 100 });
 
   document.getElementById("themeToggleBtn")?.addEventListener("click", toggleTheme);
   document.getElementById("signupForm")?.addEventListener("submit", signupHandler);
