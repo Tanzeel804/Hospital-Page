@@ -1,30 +1,293 @@
-]<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>About — MediCare Plus</title>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — MediCare+</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Albert+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/00aaff/hospital-cross.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://img.icons8.com/ios-filled/40/ffffff/hospital.png" alt="logo" style="width: 34px; margin-right: 8px">
+                <span class="fw-bold">MediCare<span class="text-muted-2">+</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-4 me-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
+                    <li class="nav-item"><a href="emergency.html" class="nav-link">Emergency</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="developer.html" class="nav-link">Developer</a></li>
+                </ul>
+                <div id="authArea" class="d-flex align-items-center gap-2"></div>
+                <div class="ms-3 d-flex align-items-center">
+                    <button id="themeToggleBtn" class="btn btn-sm" title="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Albert+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="https://img.icons8.com/ios-filled/50/00aaff/hospital-cross.png"
-    />
-  </head>
-  <body>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">About MediCare+</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Leading healthcare provider dedicated to excellence and patient care</p>
+        </div>
+    </div>
+
+    <!-- HOSPITAL STORY -->
+    <section>
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2005, MediCare+ has been a beacon of hope and healing in the healthcare industry. What started as a small clinic has grown into a state-of-the-art hospital with comprehensive medical services.</p>
+                    <p>Our mission is simple: to provide world-class medical care with compassion and professionalism. We believe healthcare is not just about treating diseases, but about caring for people.</p>
+                    <p>Over the years, we've treated thousands of patients and earned their trust through consistent delivery of quality healthcare, innovative treatments, and patient-centric services.</p>
+                    <div class="mt-4">
+                        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/500x400/?hospital,building" alt="Hospital Building" class="img-fluid rounded" style="border-radius: 12px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Impact</h2>
+                <p>By the numbers, celebrating our commitment to healthcare excellence.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 js-counter" data-aos="fade-up">
+                    <div class="counter-item">
+                        <div class="counter-number" data-target="50000">0</div>
+                        <div class="counter-label">Patients Treated</div>
+                    </div>
+                </div>
+                <div class="col-md-3 js-counter" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-item">
+                        <div class="counter-number" data-target="150">0</div>
+                        <div class="counter-label">Expert Doctors</div>
+                    </div>
+                </div>
+                <div class="col-md-3 js-counter" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-item">
+                        <div class="counter-number" data-target="500">0</div>
+                        <div class="counter-label">Hospital Beds</div>
+                    </div>
+                </div>
+                <div class="col-md-3 js-counter" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter-item">
+                        <div class="counter-number" data-target="19">0</div>
+                        <div class="counter-label">Years of Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h4 class="card-title">Our Mission</h4>
+                            <p class="card-text">To provide comprehensive, patient-centered healthcare services with integrity, compassion, and excellence. We are committed to advancing medical knowledge, improving community health, and making healthcare accessible to all.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                            <h4 class="card-title">Our Vision</h4>
+                            <p class="card-text">To be a leading healthcare institution recognized for our commitment to excellence, innovation, and patient care. We aspire to be a beacon of hope where every patient receives world-class treatment in a compassionate and supportive environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide us every day in serving you better.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+                            <h5 class="card-title">Compassion</h5>
+                            <p class="card-text">We treat every patient with empathy, kindness, and respect. Patient care is at the heart of everything we do.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                            <h5 class="card-title">Excellence</h5>
+                            <p class="card-text">We strive for the highest quality in medical practice, maintaining rigorous standards in all our services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <h5 class="card-title">Integrity</h5>
+                            <p class="card-text">We operate with honesty, transparency, and ethical principles in all our professional dealings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-title">MediCare+</div>
+                    <p class="text-muted">Your trusted healthcare partner for quality medical services.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-title">Contact Info</div>
+                    <p class="text-muted"><i class="fa-solid fa-phone"></i> +92-300-1234567</p>
+                    <p class="text-muted"><i class="fa-solid fa-envelope"></i> info@medicare.pk</p>
+                    <p class="text-muted"><i class="fa-solid fa-location-dot"></i> Islamabad, Pakistan</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="developer-profile">
+                        <img src="https://via.placeholder.com/100x100?text=TA" alt="Tanzeel Ahmed">
+                        <div class="developer-info">
+                            <h6>Tanzeel Ahmed</h6>
+                            <p>Software Engineering Student | Web Developer</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Tanzeel804" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/tanzeelahmedpov/" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/tanzeelahmedpov" class="social-link" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tanzeel Ahmed. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="signupForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword2" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupPassword2" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="loginForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
     <div class="scroll-progress" id="scrollProgress"></div>
     <!-- NAVBAR (same structure as index) -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
